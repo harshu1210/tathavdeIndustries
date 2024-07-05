@@ -1,0 +1,35 @@
+#container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#controls {
+  position: relative;
+  height: 96%;
+  width: 26%;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
+#mainFrame {
+  position: relative;
+  height: 100%;
+  width: 70%;
+}
+
+.fieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+
+.example-half-width {
+  width: 45%;
+}

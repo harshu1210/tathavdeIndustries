@@ -6,7 +6,7 @@ import { Component, HostListener, Input, OnChanges, OnInit, SimpleChanges } from
   templateUrl: './frame.component.html',
   styleUrls: ['./frame.component.css']
 })
-export class FrameComponent implements OnInit {
+export class FrameComponent implements OnInit, OnChanges {
 
   scene!: THREE.Scene;
   camera!: THREE.PerspectiveCamera;
@@ -43,8 +43,7 @@ export class FrameComponent implements OnInit {
     this.scene = new THREE.Scene();
 
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    this.camera.position.z = 20;
-
+    this.camera.position.z = this.height + 5;
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0xffffff); // Set the background color to white

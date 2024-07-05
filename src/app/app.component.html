@@ -9,21 +9,25 @@
     <div class="fieldset">
       <mat-form-field class="example-half-width" appearance="outline">
         <mat-label>Width Feet</mat-label>
-        <input matInput placeholder="Enter Width In Feet" type="number" [(ngModel)]="width" step="0.1">
+        <input matInput placeholder="Enter Width in Feets" type="number" (keyup)="valueChange()"
+          (keydown)="valueChange()" [(ngModel)]="widthFeet" step="0.1">
       </mat-form-field>
       <mat-form-field class="example-half-width" appearance="outline">
         <mat-label>Width Inches</mat-label>
-        <input matInput placeholder="Enter Width In Feet" type="number" [(ngModel)]="width" step="0.1">
+        <input matInput placeholder="Enter Width in Inches" type="number" (keyup)="valueChange()"
+          (keydown)="valueChange()" [(ngModel)]="widthInches" step="0.1">
       </mat-form-field>
     </div>
     <div class="fieldset">
       <mat-form-field class="example-half-width" appearance="outline">
-        <mat-label>Height</mat-label>
-        <input matInput placeholder="Enter Width" type="number" [(ngModel)]="height" step="0.1">
+        <mat-label>Height Feet</mat-label>
+        <input matInput placeholder="Enter Height in Feets" type="number" (keyup)="valueChange()"
+          (keydown)="valueChange()" [(ngModel)]="heightFeet" step="0.1">
       </mat-form-field>
       <mat-form-field class="example-half-width" appearance="outline">
-        <mat-label>Height</mat-label>
-        <input matInput placeholder="Enter Width" type="number" [(ngModel)]="height" step="0.1">
+        <mat-label>Height Inches</mat-label>
+        <input matInput placeholder="Enter Height in Inches" type="number" (keyup)="valueChange()"
+          (keydown)="valueChange()" [(ngModel)]="heightInches" step="0.1">
       </mat-form-field>
     </div>
     <div style="padding: 5%;">
@@ -31,22 +35,26 @@
     </div>
     <div class="fieldset">
       <mat-form-field class="example-half-width" appearance="outline">
-        <mat-label>Glass Thickness</mat-label>
-        <input matInput placeholder="Enter Width" type="number" [(ngModel)]="glassThickness" step="0.1">
+        <mat-label>Glass Thickness Inches</mat-label>
+        <input matInput placeholder="Enter Glass Thickness in Inches" type="number" (keyup)="valueChange()"
+          (keydown)="valueChange()" [(ngModel)]="glassThicknessInches" step="0.1">
       </mat-form-field>
       <mat-form-field *ngIf="product.value != 'glass'" class="example-half-width" appearance="outline">
-        <mat-label>Frame Thickness</mat-label>
-        <input matInput placeholder="Enter Width" type="number" [(ngModel)]="frameThickness" step="0.1">
+        <mat-label>Frame Thickness Inches</mat-label>
+        <input matInput placeholder="Enter Frame Thickness in Inches" type="number" (keyup)="valueChange()"
+          (keydown)="valueChange()" [(ngModel)]="frameThicknessInches" step="0.1">
       </mat-form-field>
     </div>
     <div class="fieldset">
       <mat-form-field *ngIf="product.value != 'glass' " class="example-half-width" appearance="outline">
         <mat-label>MainFrameColor</mat-label>
-        <input matInput placeholder="Enter color" type="color" [(ngModel)]="mainFrameColor">
+        <input matInput placeholder="Enter color" type="color" (keyup)="valueChange()" (keydown)="valueChange()"
+          [(ngModel)]="mainFrameColor">
       </mat-form-field>
       <mat-form-field *ngIf="product.value != 'glass' " class="example-half-width" appearance="outline">
         <mat-label>SubFrameColor</mat-label>
-        <input matInput placeholder="Enter color" type="color" [(ngModel)]="subFrameColor">
+        <input matInput placeholder="Enter color" type="color" (keyup)="valueChange()" (keydown)="valueChange()"
+          [(ngModel)]="subFrameColor">
       </mat-form-field>
     </div>
   </div>

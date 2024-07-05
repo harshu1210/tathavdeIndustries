@@ -10,11 +10,13 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
 import { GlassComponent } from './products/glass/glass.component';
 import { FrameComponent } from './products/frame/frame.component';
+import { SingleFrenchDoorComponent } from './products/single-french-door/single-french-door.component';
 @NgModule({
   declarations: [
     AppComponent,
     GlassComponent,
     FrameComponent,
+    SingleFrenchDoorComponent,
   ],
   imports: [
     BrowserModule,

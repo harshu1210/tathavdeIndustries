@@ -30,13 +30,10 @@
           (keydown)="valueChange()" [(ngModel)]="heightInches" step="0.1">
       </mat-form-field>
     </div>
-    <div style="padding: 5%;">
-      <span>Glass Thickness is equal to half of FrameThickness</span>
-    </div>
     <div class="fieldset">
-      <mat-form-field class="example-half-width" appearance="outline">
-        <mat-label>Glass Thickness Inches</mat-label>
-        <input matInput placeholder="Enter Glass Thickness in Inches" type="number" (keyup)="valueChange()"
+      <mat-form-field *ngIf="product.value != 'frameset'" class="example-half-width" appearance="outline">
+        <mat-label>Glass Thickness MM</mat-label>
+        <input matInput placeholder="Enter Glass Thickness in mm" type="number" (keyup)="valueChange()"
           (keydown)="valueChange()" [(ngModel)]="glassThicknessInches" step="0.1">
       </mat-form-field>
       <mat-form-field *ngIf="product.value != 'glass'" class="example-half-width" appearance="outline">
@@ -61,7 +58,9 @@
   <div id="mainFrame">
     <app-glass *ngIf="product.key == 'Glass'" [width]="width" [height]="height"
       [glassThickness]="glassThickness"></app-glass>
-    <app-frame *ngIf="product.key == 'Frame Set'" [width]="width" [height]="height" [frameThickness]="frameThickness"
+    <app-frame *ngIf="product.key == 'Single French Door (Frame Set)'" [width]="width" [height]="height" [frameThickness]="frameThickness"
       [mainFrameColor]="mainFrameColor" [subFrameColor]="subFrameColor"></app-frame>
+    <app-single-french-door *ngIf="product.key == 'Single French Door'" [width]="width" [height]="height" [glassThickness]="glassThickness" [frameThickness]="frameThickness"
+      [mainFrameColor]="mainFrameColor" [subFrameColor]="subFrameColor"></app-single-french-door>
   </div>
 </div>

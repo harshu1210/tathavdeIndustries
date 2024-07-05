@@ -8,7 +8,7 @@ import { Tween } from '@tweenjs/tween.js';
 })
 export class AppComponent implements OnInit {
   frameThicknessInches: number = 1.375;
-  glassThicknessInches: number = 0.6875;
+  glassThicknessInches: number = 3;
   widthInches: number = 6;
   widthFeet: number = 2;
   heightInches: number = 8;
@@ -16,12 +16,12 @@ export class AppComponent implements OnInit {
   width: number = this.widthFeet + (this.widthInches / 12);
   height: number = this.heightFeet + (this.heightInches / 12);
   frameThickness: number = this.frameThicknessInches / 12;
-  glassThickness: number = this.glassThicknessInches / 12;
+  glassThickness: number = this.glassThicknessInches / 304.8;
   mainFrameColor: any = 0x000000;
   subFrameColor: any = 0x000000;
 
-  products: any[] = [{ key: 'Glass', value: 'glass' }, { key: 'Frame Set', value: 'frameset' }, { key: 'Single French Door (Frame Set)', value: 'frameset' }, { key: 'Single French Door', value: 'both' }, { key: 'Double Sliding Window (Frame Set)', value: 'frameset' }, { key: 'Double Sliding Window', value: 'both' }];
-  product: any = this.products[1];
+  products: any[] = [{ key: 'Glass', value: 'glass' }, { key: 'Single French Door (Frame Set)', value: 'frameset' }, { key: 'Single French Door', value: 'both' }, { key: 'Double Sliding Window (Frame Set)', value: 'frameset' }, { key: 'Double Sliding Window', value: 'both' }];
+  product: any = this.products[2];
 
   ngOnInit(): void {
   }
@@ -30,8 +30,7 @@ export class AppComponent implements OnInit {
     this.width = this.widthFeet + (this.widthInches / 12);
     this.height = this.heightFeet + (this.heightInches / 12);
     this.frameThickness = this.frameThicknessInches / 12;
-    this.glassThickness = this.glassThicknessInches / 12;
-    console.log(this.width)
+    this.glassThickness = this.glassThicknessInches / 304.8;
   }
 
   //   //FrameSet

@@ -1,11 +1,11 @@
 import * as THREE from 'three';
 import { Component, HostListener, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 @Component({
-  selector: 'app-frame',
-  templateUrl: './frame.component.html',
-  styleUrls: ['./frame.component.css']
+  selector: 'app-single-french-door',
+  templateUrl: './single-french-door.component.html',
+  styleUrls: ['./single-french-door.component.css']
 })
-export class FrameComponent implements OnInit, OnChanges {
+export class SingleFrenchDoorComponent implements OnInit, OnChanges {
 
   scene!: THREE.Scene;
   camera!: THREE.PerspectiveCamera;
@@ -16,6 +16,7 @@ export class FrameComponent implements OnInit, OnChanges {
   @Input() frameThickness!: number;
   @Input() mainFrameColor!: any;
   @Input() subFrameColor!: any;
+  @Input() glassThickness!:number;
 
   mainFrameWidth!: number;
   mainFrameHeigth!: number;
@@ -141,6 +142,12 @@ export class FrameComponent implements OnInit, OnChanges {
     rightFrame.position.set(this.width / 2, 0, 0);
 
     this.object.add(topFrame, bottomFrame, leftFrame, rightFrame);
+
+    //Glass
+    const glassMaterial = new THREE.MeshStandardMaterial({ color: 0x87CEEB, opacity: 0.5, transparent: true });
+    const glassGeometry = new THREE.BoxGeometry(this.width, this.height, this.glassThickness);
+    const glass = new THREE.Mesh(glassGeometry, glassMaterial);
+    this.object.add(glass);
 
     this.scene.add(this.object);
 

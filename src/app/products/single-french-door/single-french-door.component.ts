@@ -48,7 +48,6 @@ export class SingleFrenchDoorComponent implements OnInit, OnChanges {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0xffffff); // Set the background color to white
     document.getElementById('threejs-container')?.appendChild(this.renderer.domElement);
-    console.log()
     this.createFrameSet();
     this.animate();
   }
@@ -81,14 +80,10 @@ export class SingleFrenchDoorComponent implements OnInit, OnChanges {
   createFrameSet(): void {
     this.clearCanvas();
 
-    // const textureLoader = new THREE.TextureLoader();
-    // const frameTexture = textureLoader.load('assets/blueTexture.avif');
     const mainFrameMaterial = new THREE.MeshStandardMaterial({ color: this.mainFrameColor });
-    // const frameMaterial = new THREE.MeshStandardMaterial({ map: frameTexture, opacity:1 });
-
     //Main Frame
     this.mainFrameWidth = this.width + this.frameThickness * 2;
-    this.mainFrameHeigth = this.height;
+    this.mainFrameHeigth = this.height+this.frameThickness*2;
     this.mainFrameFrameThickness = this.frameThickness;
     this.mainFrameDepth = this.frameThickness * 2;
 
@@ -154,8 +149,6 @@ export class SingleFrenchDoorComponent implements OnInit, OnChanges {
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(5, 5, 5).normalize();
     this.scene.add(light);
-
-    console.log({ 'subFrmaeVolume': this.subFrameVolume, 'mainFrmaeVolume': this.mainFrameVolume })
   }
 
 

@@ -47,7 +47,6 @@ export class FrameComponent implements OnInit, OnChanges {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0xffffff); // Set the background color to white
     document.getElementById('threejs-container')?.appendChild(this.renderer.domElement);
-    console.log()
     this.createFrameSet();
     this.animate();
   }
@@ -87,7 +86,7 @@ export class FrameComponent implements OnInit, OnChanges {
 
     //Main Frame
     this.mainFrameWidth = this.width + this.frameThickness * 2;
-    this.mainFrameHeigth = this.height;
+    this.mainFrameHeigth = this.height+this.frameThickness * 2;
     this.mainFrameFrameThickness = this.frameThickness;
     this.mainFrameDepth = this.frameThickness * 2;
 
@@ -147,8 +146,6 @@ export class FrameComponent implements OnInit, OnChanges {
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(5, 5, 5).normalize();
     this.scene.add(light);
-
-    console.log({ 'subFrmaeVolume': this.subFrameVolume, 'mainFrmaeVolume': this.mainFrameVolume })
   }
 
 

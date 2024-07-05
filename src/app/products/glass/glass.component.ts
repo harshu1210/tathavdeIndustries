@@ -37,7 +37,6 @@ export class GlassComponent implements OnInit, OnChanges {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0xffffff); // Set the background color to white
     document.getElementById('threejs-container')?.appendChild(this.renderer.domElement);
-    console.log()
     this.createGlass();
     this.animate();
   }
@@ -77,7 +76,6 @@ export class GlassComponent implements OnInit, OnChanges {
 
     this.scene.add(this.object);
     this.glassVolume = this.width * this.height * this.glassThickness;
-    console.log(this.glassVolume)
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(5, 5, 5).normalize();
     this.scene.add(light);

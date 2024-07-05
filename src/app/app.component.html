@@ -62,5 +62,9 @@
       [mainFrameColor]="mainFrameColor" [subFrameColor]="subFrameColor"></app-frame>
     <app-single-french-door *ngIf="product.key == 'Single French Door'" [width]="width" [height]="height" [glassThickness]="glassThickness" [frameThickness]="frameThickness"
       [mainFrameColor]="mainFrameColor" [subFrameColor]="subFrameColor"></app-single-french-door>
+    <app-double-sliding-window-frame-set *ngIf="product.key == 'Double Sliding Window (Frame Set)'" [width]="width" [height]="height" [frameThickness]="frameThickness"
+      [mainFrameColor]="mainFrameColor" [subFrameColor]="subFrameColor"></app-double-sliding-window-frame-set>
+    <app-double-sliding-window *ngIf="product.key == 'Double Sliding Window'" [width]="width" [height]="height" [glassThickness]="glassThickness" [frameThickness]="frameThickness"
+      [mainFrameColor]="mainFrameColor" [subFrameColor]="subFrameColor"></app-double-sliding-window>
   </div>
 </div>

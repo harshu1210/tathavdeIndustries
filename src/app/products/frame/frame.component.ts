@@ -82,11 +82,9 @@ export class FrameComponent implements OnInit, OnChanges {
     // const textureLoader = new THREE.TextureLoader();
     // const frameTexture = textureLoader.load('assets/blueTexture.avif');
     const mainFrameMaterial = new THREE.MeshStandardMaterial({ color: this.mainFrameColor });
-    // const frameMaterial = new THREE.MeshStandardMaterial({ map: frameTexture, opacity:1 });
-
     //Main Frame
-    this.mainFrameWidth = this.width + this.frameThickness * 2;
-    this.mainFrameHeigth = this.height+this.frameThickness * 2;
+    this.mainFrameWidth = this.width + this.frameThickness * 4;
+    this.mainFrameHeigth = this.height + this.frameThickness * 4;
     this.mainFrameFrameThickness = this.frameThickness;
     this.mainFrameDepth = this.frameThickness * 2;
 
@@ -104,10 +102,10 @@ export class FrameComponent implements OnInit, OnChanges {
     const mainLeftFrame = new THREE.Mesh(mainFrame[2], mainFrameMaterial);
     const mainRightFrame = new THREE.Mesh(mainFrame[3], mainFrameMaterial);
 
-    mainTopFrame.position.set(0, (this.height + this.frameThickness) / 2, 0);
-    mainBottomFrame.position.set(0, -(this.height + this.frameThickness) / 2, 0);
-    mainLeftFrame.position.set(-(this.width + this.frameThickness) / 2, 0, 0);
-    mainRightFrame.position.set((this.width + this.frameThickness) / 2, 0, 0);
+    mainTopFrame.position.set(0, (this.height + this.frameThickness * 3) / 2, 0);
+    mainBottomFrame.position.set(0, -(this.height + this.frameThickness * 3) / 2, 0);
+    mainLeftFrame.position.set(-(this.width + this.frameThickness*3) / 2, 0, 0);
+    mainRightFrame.position.set((this.width + this.frameThickness*3) / 2, 0, 0);
 
     this.object.add(mainTopFrame, mainBottomFrame, mainLeftFrame, mainRightFrame);
 
@@ -115,9 +113,9 @@ export class FrameComponent implements OnInit, OnChanges {
     // Sub Frame
     const subFrameMaterial = new THREE.MeshStandardMaterial({ color: this.subFrameColor });
 
-    this.subFrameWidth = this.width + this.frameThickness;
+    this.subFrameWidth = this.width + this.frameThickness*2;
     this.subFrameFrameThickness = this.frameThickness;
-    this.subFrameHeigth = this.height;
+    this.subFrameHeigth = this.height + this.frameThickness*2;
     this.subFrameDepth = this.frameThickness;
 
     this.subFrameVolume = (this.subFrameWidth * this.subFrameFrameThickness * this.subFrameDepth * 2) + (this.subFrameFrameThickness * this.subFrameHeigth * this.subFrameDepth * 2)
@@ -134,10 +132,10 @@ export class FrameComponent implements OnInit, OnChanges {
     const leftFrame = new THREE.Mesh(frameGeometries[2], subFrameMaterial);
     const rightFrame = new THREE.Mesh(frameGeometries[3], subFrameMaterial);
 
-    topFrame.position.set(0, this.height / 2, 0);
-    bottomFrame.position.set(0, -this.height / 2, 0);
-    leftFrame.position.set(-this.width / 2, 0, 0);
-    rightFrame.position.set(this.width / 2, 0, 0);
+    topFrame.position.set(0, (this.height+this.frameThickness) / 2, 0);
+    bottomFrame.position.set(0, -(this.height+this.frameThickness) / 2, 0);
+    leftFrame.position.set(-(this.width+this.frameThickness) / 2, 0, 0);
+    rightFrame.position.set((this.width+this.frameThickness) / 2, 0, 0);
 
     this.object.add(topFrame, bottomFrame, leftFrame, rightFrame);
 

@@ -13,6 +13,8 @@ import { FrameComponent } from './products/frame/frame.component';
 import { SingleFrenchDoorComponent } from './products/single-french-door/single-french-door.component';
 import { DoubleSlidingWindowComponent } from './products/double-sliding-window/double-sliding-window.component';
 import { DoubleSlidingWindowFrameSetComponent } from './products/double-sliding-window-frame-set/double-sliding-window-frame-set.component';
+import { TripleSlidingWindowFrameSetComponent } from './products/triple-sliding-window-frame-set/triple-sliding-window-frame-set.component';
+import { TripleSlidingWindowComponent } from './products/triple-sliding-window/triple-sliding-window.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import { DoubleSlidingWindowFrameSetComponent } from './products/double-sliding-
     SingleFrenchDoorComponent,
     DoubleSlidingWindowComponent,
     DoubleSlidingWindowFrameSetComponent,
+    TripleSlidingWindowFrameSetComponent,
+    TripleSlidingWindowComponent,
   ],
   imports: [
     BrowserModule,

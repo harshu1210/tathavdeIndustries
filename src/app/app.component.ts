@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   mainFrameColor: any = 0x000000;
   subFrameColor: any = 0x000000;
 
-  products: any[] = [{ key: 'Glass', value: 'glass' }, { key: 'Single French Door (Frame Set)', value: 'frameset' }, { key: 'Single French Door', value: 'both' }, { key: 'Double Sliding Window (Frame Set)', value: 'frameset' }, { key: 'Double Sliding Window', value: 'both' }];
+  products: any[] = [{ key: 'Glass', value: 'glass' }, { key: 'Single French Door (Frame Set)', value: 'frameset' }, { key: 'Single French Door', value: 'both' }, { key: 'Double Sliding Window (Frame Set)', value: 'frameset' }, { key: 'Double Sliding Window', value: 'both' },{ key: 'Triple Sliding Window (Frame Set)', value: 'frameset' },{ key: 'Triple Sliding Window', value: 'both' }];
   product: any = this.products[0];
 
   ngOnInit(): void {

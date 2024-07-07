@@ -115,17 +115,17 @@ export class DoubleSlidingWindowComponent implements OnInit {
     this.subFrameFrameThickness=this.frameThickness;
     this.subFrameHeigth=this.height + this.frameThickness*2;
     this.subFrameDepth=this.frameThickness;
-    const frameGeometries1 = [
+    const frameGeometries = [
       new THREE.BoxGeometry(this.subFrameWidth, this.subFrameFrameThickness, this.subFrameDepth),
       new THREE.BoxGeometry(this.subFrameWidth, this.subFrameFrameThickness, this.subFrameDepth),
       new THREE.BoxGeometry(this.subFrameFrameThickness, this.subFrameHeigth, this.subFrameDepth),
       new THREE.BoxGeometry(this.subFrameFrameThickness, this.subFrameHeigth, this.subFrameDepth)
     ];
 
-    const topFrame1 = new THREE.Mesh(frameGeometries1[0], subFrameMaterial);
-    const bottomFrame1 = new THREE.Mesh(frameGeometries1[1], subFrameMaterial);
-    const leftFrame1 = new THREE.Mesh(frameGeometries1[2], subFrameMaterial);
-    const rightFrame1 = new THREE.Mesh(frameGeometries1[3], subFrameMaterial);
+    const topFrame1 = new THREE.Mesh(frameGeometries[0], subFrameMaterial);
+    const bottomFrame1 = new THREE.Mesh(frameGeometries[1], subFrameMaterial);
+    const leftFrame1 = new THREE.Mesh(frameGeometries[2], subFrameMaterial);
+    const rightFrame1 = new THREE.Mesh(frameGeometries[3], subFrameMaterial);
 
     topFrame1.position.set(-(this.width + this.frameThickness) / 2, (this.height + this.frameThickness) / 2, 0);
     bottomFrame1.position.set(-(this.width + this.frameThickness) / 2, -(this.height + this.frameThickness) / 2, 0);
@@ -134,23 +134,16 @@ export class DoubleSlidingWindowComponent implements OnInit {
 
     this.object.add(topFrame1, bottomFrame1, leftFrame1, rightFrame1);
 
-    const glassGeometry1 = new THREE.BoxGeometry(this.width, this.height, this.glassThickness);
-    const glass1 = new THREE.Mesh(glassGeometry1, glassMaterial);
+    const glassGeometry = new THREE.BoxGeometry(this.width, this.height, this.glassThickness);
+    const glass1 = new THREE.Mesh(glassGeometry, glassMaterial);
     glass1.position.set(-(this.width+this.frameThickness)/ 2, 0, 0);
     this.object.add(glass1);
 
     // Second Frame
-    const frameGeometries2 = [
-      new THREE.BoxGeometry(this.subFrameWidth, this.frameThickness, this.frameThickness),
-      new THREE.BoxGeometry(this.subFrameWidth, this.frameThickness, this.frameThickness),
-      new THREE.BoxGeometry(this.frameThickness, this.height, this.frameThickness),
-      new THREE.BoxGeometry(this.frameThickness, this.height, this.frameThickness)
-    ];
-
-    const topFrame2 = new THREE.Mesh(frameGeometries2[0], subFrameMaterial);
-    const bottomFrame2 = new THREE.Mesh(frameGeometries2[1], subFrameMaterial);
-    const leftFrame2 = new THREE.Mesh(frameGeometries2[2], subFrameMaterial);
-    const rightFrame2 = new THREE.Mesh(frameGeometries2[3], subFrameMaterial);
+    const topFrame2 = new THREE.Mesh(frameGeometries[0], subFrameMaterial);
+    const bottomFrame2 = new THREE.Mesh(frameGeometries[1], subFrameMaterial);
+    const leftFrame2 = new THREE.Mesh(frameGeometries[2], subFrameMaterial);
+    const rightFrame2 = new THREE.Mesh(frameGeometries[3], subFrameMaterial);
 
     topFrame2.position.set((this.width+this.frameThickness) / 2, (this.height+this.frameThickness) / 2, -this.frameThickness);
     bottomFrame2.position.set((this.width+this.frameThickness) / 2, -(this.height+this.frameThickness) / 2, -this.frameThickness);
@@ -159,8 +152,7 @@ export class DoubleSlidingWindowComponent implements OnInit {
 
     this.object.add(topFrame2, bottomFrame2, leftFrame2, rightFrame2);
 
-    const glassGeometry2 = new THREE.BoxGeometry(this.width, this.height, this.glassThickness);
-    const glass2 = new THREE.Mesh(glassGeometry2, glassMaterial);
+    const glass2 = new THREE.Mesh(glassGeometry, glassMaterial);
     glass2.position.set((this.width+this.frameThickness) / 2, 0, -this.frameThickness);
     this.object.add(glass2);
 

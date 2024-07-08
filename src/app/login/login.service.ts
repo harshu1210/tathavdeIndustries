@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable, map } from 'rxjs';
+// import { Auth, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +39,12 @@ export class LoginService {
   deleteUser(userId: string): Promise<void> {
     return this.firestore.collection('/users').doc(userId).delete();
   }
+
+  // login(email: string, password: string) {
+  //   return signInWithEmailAndPassword(this.auth, email, password);
+  // }
+
+  // logout() {
+  //   return signOut(this.auth);
+  // }
 }

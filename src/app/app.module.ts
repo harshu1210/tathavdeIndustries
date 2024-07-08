@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,13 +15,15 @@ import { DoubleSlidingWindowFrameSetComponent } from './products/double-sliding-
 import { TripleSlidingWindowFrameSetComponent } from './products/triple-sliding-window-frame-set/triple-sliding-window-frame-set.component';
 import { TripleSlidingWindowComponent } from './products/triple-sliding-window/triple-sliding-window.component';
 import { LoginComponent } from './login/login.component';
-import { environment } from '../environments/environment'; // <--- Environment variables.
+import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
-import {AngularFireModule} from '@angular/fire/compat'
+import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { RouterModule } from '@angular/router';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,11 +49,11 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {  }
-
+export class AppModule { }

@@ -3,6 +3,9 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import * as THREE from 'three';
 import { Tween } from '@tweenjs/tween.js';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { initializeApp } from '@angular/fire/app';
+import { getAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,14 +29,18 @@ export class AppComponent implements OnInit {
   product: any = this.products[0];
 
   constructor(private LoginService:LoginService,private router:Router){
-
+    // console.log('Firebase Config: ', environment.firebaseConfig);
+    // const app = initializeApp(environment.firebaseConfig);
+    // console.log('Firebase App Initialized: ', app);
+    // const auth = getAuth(app);
+    // console.log('Firebase Auth Initialized: ', auth);
   }
 
   ngOnInit(): void {
     // this.LoginService.getUsers().subscribe((user)=>{
     //   console.log(user);
     // })
-    this.router.navigate(['/login']);
+    // this.router.navigate(['/login']);
   }
 
   valueChange(): void {

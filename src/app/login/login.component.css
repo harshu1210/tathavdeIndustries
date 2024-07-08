@@ -1,0 +1,49 @@
+.container{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insideContainer{
+  position: relative;
+  height: 90%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header{
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.pad-botm-4vh{
+  padding-bottom:4vh
+}
+
+.pad-botm-3vh{
+  padding-bottom:3vh
+}
+
+.pad-botm-2vh{
+  padding-bottom:2vh
+}
+
+.pad-botm-1vh{
+  padding-bottom:1vh
+}

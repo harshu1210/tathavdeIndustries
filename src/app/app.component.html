@@ -1,5 +1,5 @@
 <div id="container">
-  <div id="controls">
+  <!-- <div id="controls">
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Products</mat-label>
       <mat-select [(ngModel)]="product">
@@ -70,5 +70,6 @@
       [mainFrameColor]="mainFrameColor" [subFrameColor]="subFrameColor"></app-triple-sliding-window-frame-set>
       <app-triple-sliding-window *ngIf="product.key == 'Triple Sliding Window'" [width]="width" [height]="height" [glassThickness]="glassThickness" [frameThickness]="frameThickness"
       [mainFrameColor]="mainFrameColor" [subFrameColor]="subFrameColor"></app-triple-sliding-window>
-  </div>
+  </div> -->
+  <router-outlet></router-outlet>
 </div>

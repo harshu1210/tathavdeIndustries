@@ -20,6 +20,7 @@ import { environment } from '../environments/environment.prod'; // <--- Environm
 import { CommonModule } from '@angular/common';
 import {AngularFireModule} from '@angular/fire/compat'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 import { RouterModule } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 @NgModule({
@@ -47,6 +48,7 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    provideAuth(() => getAuth()),
     MatButtonModule
   ],
   providers: [],

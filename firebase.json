@@ -1,6 +1,11 @@
 {
   "hosting": {
     "public": "dist/tech",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "rewrites": [
       {
         "source": "**",

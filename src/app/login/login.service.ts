@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-// import { Auth, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore, private fireAuth:AngularFireAuth, private router:Router) { }
 
   // Get all users
   getUsers(): Observable<any[]> {
@@ -40,11 +40,12 @@ export class LoginService {
     return this.firestore.collection('/users').doc(userId).delete();
   }
 
-  // login(email: string, password: string) {
-  //   return signInWithEmailAndPassword(this.auth, email, password);
-  // }
-
-  // logout() {
-  //   return signOut(this.auth);
-  // }
+  loginWithEmailPassword(email:any,password:string){
+    this.fireAuth.signInWithEmailAndPassword(email,password).then(()=>{
+      localStorage.setItem("token","true");
+    }, error=>{
+      window.alert("Not able to SignIn Currently")
+      this.router.navigate(['/login']);
+    })
+  }
 }

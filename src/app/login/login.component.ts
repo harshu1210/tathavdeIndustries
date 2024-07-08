@@ -32,14 +32,7 @@ export class LoginComponent implements OnInit {
     } else if (this.passwordFormControl.value == null || this.passwordFormControl.value.length == 0) {
       window.alert("Password is Required")
     } else {
-      this.loginService.getUserByEmailAndPassword(this.emailFormControl.value, this.passwordFormControl.value).subscribe((data) => {
-        console.log(data)
-        if(data==undefined || data.length == 0 || data==null){
-          window.alert("Invalid Credentials")
-        }
-      }, err => {
-        window.alert("Invalid Credentials")
-      })
+      this.loginService.loginWithEmailPassword(this.emailFormControl.value, this.passwordFormControl.value);
     }
   }
 

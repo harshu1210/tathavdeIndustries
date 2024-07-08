@@ -16,7 +16,7 @@ import { DoubleSlidingWindowFrameSetComponent } from './products/double-sliding-
 import { TripleSlidingWindowFrameSetComponent } from './products/triple-sliding-window-frame-set/triple-sliding-window-frame-set.component';
 import { TripleSlidingWindowComponent } from './products/triple-sliding-window/triple-sliding-window.component';
 import { LoginComponent } from './login/login.component';
-import { environment } from '../environments/environment'; // <--- Environment variables.
+import { environment } from '../environments/environment.prod'; // <--- Environment variables.
 import { CommonModule } from '@angular/common';
 import {AngularFireModule} from '@angular/fire/compat'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';

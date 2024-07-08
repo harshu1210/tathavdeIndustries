@@ -1,11 +1,4 @@
-import { LoginService } from './login/login.service';
-import { Component, OnInit, HostListener } from '@angular/core';
-import * as THREE from 'three';
-import { Tween } from '@tweenjs/tween.js';
-import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
-import { initializeApp } from '@angular/fire/app';
-import { getAuth } from '@angular/fire/auth';
+import { Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,19 +21,10 @@ export class AppComponent implements OnInit {
   products: any[] = [{ key: 'Glass', value: 'glass' }, { key: 'Single French Door (Frame Set)', value: 'frameset' }, { key: 'Single French Door', value: 'both' }, { key: 'Double Sliding Window (Frame Set)', value: 'frameset' }, { key: 'Double Sliding Window', value: 'both' },{ key: 'Triple Sliding Window (Frame Set)', value: 'frameset' },{ key: 'Triple Sliding Window', value: 'both' }];
   product: any = this.products[0];
 
-  constructor(private LoginService:LoginService,private router:Router){
-    // console.log('Firebase Config: ', environment.firebaseConfig);
-    // const app = initializeApp(environment.firebaseConfig);
-    // console.log('Firebase App Initialized: ', app);
-    // const auth = getAuth(app);
-    // console.log('Firebase Auth Initialized: ', auth);
+  constructor(){
   }
 
   ngOnInit(): void {
-    // this.LoginService.getUsers().subscribe((user)=>{
-    //   console.log(user);
-    // })
-    // this.router.navigate(['/login']);
   }
 
   valueChange(): void {

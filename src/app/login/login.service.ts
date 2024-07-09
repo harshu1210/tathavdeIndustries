@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  constructor(private firestore: AngularFirestore, private fireAuth:AngularFireAuth, private router:Router) { }
+  private saltRounds = 10;
+
+  constructor(private firestore: AngularFirestore, private fireAuth: AngularFireAuth, private router: Router) { }
 
   // Get all users
   getUsers(): Observable<any[]> {
@@ -16,8 +18,8 @@ export class LoginService {
   }
 
   // Get a single user
-  getUserByEmailAndPassword(email: string, password: string): Observable<any | undefined> {
-    return this.firestore.collection('/users', ref => ref.where('email', '==', email).where('password', '==', password))
+  getUserByEmail(email: any): Observable<any | undefined> {
+    return this.firestore.collection('/users', ref => ref.where('email', '==', email))
       .valueChanges()
       .pipe(
         map(users => users.length > 0 ? users[0] : undefined)
@@ -26,7 +28,7 @@ export class LoginService {
 
   // Add a new user
   addUser(user: any): Promise<void> {
-    const userId = user.uid;
+    const userId = this.firestore.createId();
     return this.firestore.collection('/users').doc(userId).set(user);
   }
 
@@ -40,12 +42,26 @@ export class LoginService {
     return this.firestore.collection('/users').doc(userId).delete();
   }
 
-  loginWithEmailPassword(email:any,password:string){
-    this.fireAuth.signInWithEmailAndPassword(email,password).then(()=>{
-      localStorage.setItem("token","true");
-    }, error=>{
+  loginWithEmailPassword(email: string, password: string) {
+    this.fireAuth.signInWithEmailAndPassword(email, password).then(() => {
+      window.alert("Login SuccessFully")
+      this.router.navigate(['/products'])
+    }, error => {
       window.alert("Not able to SignIn Currently")
       this.router.navigate(['/login']);
+    })
+  }
+
+  createUser(user: any) {
+    this.fireAuth.createUserWithEmailAndPassword(user.email, user.password).then(()=>{
+      this.addUser({"firstName":user.firstName,"lastName":user.lastName,"email":user.email,"role":user.role});
+      window.alert("Created User Sucessfully");
+    },error=>{
+      if(error.code == "auth/email-already-in-use"){
+        window.alert("User Already Exsists")
+      }else{
+        window.alert("Server is Currently Busy")
+      }
     })
   }
 }

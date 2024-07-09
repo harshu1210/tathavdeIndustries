@@ -23,6 +23,11 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { InputSnackbarComponent } from './Shared/snackbar/inputsnackbar.component';
+import {YesNoSnackBarComponent} from './Shared/snackbar/yesNoSnackbar.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,9 @@ import { MatButtonModule } from '@angular/material/button';
     TripleSlidingWindowFrameSetComponent,
     TripleSlidingWindowComponent,
     LoginComponent,
+    ProductListComponent,
+    InputSnackbarComponent,
+    YesNoSnackBarComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +59,12 @@ import { MatButtonModule } from '@angular/material/button';
     AngularFirestoreModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatSnackBarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [InputSnackbarComponent,YesNoSnackBarComponent]
 })
 export class AppModule { }

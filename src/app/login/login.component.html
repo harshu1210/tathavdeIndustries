@@ -1,6 +1,6 @@
 <div class="container">
   <div class="insideContainer mat-elevation-z4">
-    <div class="form">
+    <div *ngIf="login" class="form">
       <form (ngSubmit)="onSubmit()" class="example-form form">
         <div class="header pad-botm-4vh">Login Form</div>
         <div class="pad-botm-1vh">
@@ -27,13 +27,96 @@
           </mat-form-field>
         </div>
         <div class="pad-botm-3vh">
-          <button mat-button color="primary">Forgot Password?</button>
+          <button type="button" mat-button color="primary">Forgot Password?</button>
         </div>
         <div class="pad-botm-2vh">
-          <button mat-raised-button color="primary">Submit</button>
+          <button type="submit" mat-raised-button color="primary">Sign In</button>
         </div>
         <div>
-          <button mat-raised-button>Create New Account</button>
+          <button type="button" mat-raised-button (click)="enableCreateAccountForm()">Sign Up</button>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="!login" class="form">
+      <form (ngSubmit)="createAccount()" class="example-form form">
+        <div class="header pad-botm-4vh">Create New Account</div>
+        <div class="pad-botm-1vh fields">
+          <span class="example-spacer"></span>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput [formControl]="firstNameFormControl" [errorStateMatcher]="matcher"
+              placeholder="Enter First Name">
+            <mat-error *ngIf="firstNameFormControl.hasError('required')">
+              First Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <span class="pad-left-1vh"></span>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput [formControl]="lastNameFormControl" [errorStateMatcher]="matcher"
+              placeholder="Enter Last Name">
+            <mat-error *ngIf="lastNameFormControl.hasError('required')">
+              Last Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <span class="example-spacer"></span>
+        </div>
+        <div class="pad-botm-1vh fields">
+          <span class="example-spacer"></span>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+              placeholder="Enter Email">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <span class="pad-left-1vh"></span>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Role</mat-label>
+            <input type="text" matInput [formControl]="roleFormControl" [errorStateMatcher]="matcher"
+              placeholder="Enter Role Name">
+            <mat-error *ngIf="lastNameFormControl.hasError('required')">
+              Role is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <span class="example-spacer"></span>
+        </div>
+        <div class="pad-botm-2vh fields">
+          <span class="example-spacer"></span>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input [type]="passwordHide ? 'password' : 'text'" matInput [formControl]="passwordFormControl"
+              [errorStateMatcher]="matcher" placeholder="Enter Password">
+            <button type="button" mat-icon-button matSuffix (click)="passwordHide = !passwordHide"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+              <mat-icon>{{ passwordHide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <span class="pad-left-1vh"></span>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input [type]="confirmPassswordHide ? 'password' : 'text'" matInput
+              [formControl]="confirmPasswordFormControl" [errorStateMatcher]="matcher"
+              placeholder="Enter Confirm Password">
+            <button type="button" mat-icon-button matSuffix (click)="confirmPassswordHide = !confirmPassswordHide"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="confirmPassswordHide">
+              <mat-icon>{{ confirmPassswordHide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="confirmPasswordFormControl.hasError('required')">
+              Confirm Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <span class="example-spacer"></span>
+        </div>
+        <div>
+          <button type="submit" mat-raised-button>Sign Up</button>
         </div>
       </form>
     </div>

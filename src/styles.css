@@ -8,7 +8,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 #threejs-container {
@@ -23,4 +23,23 @@ body {
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+@font-face {
+  font-family: 'Spy';
+  src: url('./assets/spy-agency_woff/spyagency3_2bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }

@@ -56,10 +56,6 @@
   flex-direction: row;
 }
 
-.example-spacer {
-  flex: 1 1 auto;
-}
-
 .pad-left-1vh{
   padding-left: 1vh;
 }

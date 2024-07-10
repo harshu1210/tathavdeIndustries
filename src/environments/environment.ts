@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig :{
-    apiKey: "AIzaSyCQOIYvEboCkw7cEWKDJSU0S9urxiedJYw",
-    authDomain: "furnitureindustries-a34d2.firebaseapp.com",
-    projectId: "furnitureindustries-a34d2",
-    storageBucket: "furnitureindustries-a34d2.appspot.com",
-    messagingSenderId: "145560759067",
-    appId: "1:145560759067:web:5749671fe77b4b4756c1be",
-    measurementId: "G-QSQZ38LNVP"
+    apiKey: "xx",
+    authDomain: "xx",
+    projectId: "Xx",
+    storageBucket: "xx",
+    messagingSenderId: "xx",
+    appId: "xx",
+    measurementId: "xx"
   }
 };
 

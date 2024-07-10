@@ -1,4 +1,4 @@
-<div class="container">
+<div [ngClass]="menu ? 'zIndex1':'zIndex2'" class="container">
   <div class="header">
     <span class="example-spacer"></span>
     <div class="logo">
@@ -8,34 +8,42 @@
       <span class="pad-botm-1vh">TATHAWADE INDUSTRIES</span>
     </div>
     <span class="example-spacer"></span>
-    <div class="mail">
-      <img class="headerLogo" src="../assets//icons8-mail-100.png">
-      <span>tathawadeindustries@gmail.com</span>
-    </div>
-    <div class="phone">
-      <img class="headerLogo" src="../assets//icons8-phone-100.png">
-      <span>+91 96234 45536 | +91 77579 89898</span>
+    <div class="contact">
+      <div class="mail">
+        <img class="headerLogo" src="../assets//icons8-mail-100.png">
+        <span>tathawadeindustries@gmail.com</span>
+      </div>
+      <div class="phone">
+        <img class="headerLogo" src="../assets//icons8-phone-100.png">
+        <span>+91 96234 45536 | +91 77579 89898</span>
+      </div>
     </div>
     <span class="example-spacer"></span>
   </div>
 
   <div class="navbar navBack">
     <span class="example-spacer"></span>
-    <span class="example-spacer"></span>
+    <span class="example-spacer intermediateSpace"></span>
     <button class="navButtons" type="button" mat-flat-button>Home</button>
     <button class="navButtons" type="button" mat-flat-button>About Us</button>
     <button class="navButtons" type="button" mat-flat-button>Products</button>
     <button class="navButtons" type="button" mat-flat-button>Gallery</button>
     <button class="navButtons" type="button" mat-flat-button>Contact Us</button>
+    <button (click)="toggleMenu()" class="menu" mat-icon-button aria-label="Example icon button with a menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
     <span class="example-spacer"></span>
+    <span class="example-spacer intermediate"></span>
     <div>
       <button class="requestQuote" type="button" mat-flat-button>Request Quote</button>
     </div>
     <span class="example-spacer"></span>
   </div>
-
+  <div class="router">
+    <router-outlet></router-outlet>
+  </div>
   <div class="footer footerBack">
-    <div class="flexDirectionRow">
+    <div class="flexFooter">
       <span class="example-spacer"></span>
       <!-- About US -->
       <div class="aboutUsDiv">
@@ -83,7 +91,8 @@
           <div class="material-symbols-outlined">
             location_on
           </div>
-          <div>Sr. No. 64 / 1, A / P Tathawade, Aundh-Ravet BRT Road,Opp. Balaji Law College, PCMC, Pune - 411033, Maharashtra, India</div>
+          <div>Sr. No. 64 / 1, A / P Tathawade, Aundh-Ravet BRT Road,Opp. Balaji Law College, PCMC, Pune - 411033,
+            Maharashtra, India</div>
         </div>
         <div class="contactParam">
           <div class="material-symbols-outlined">
@@ -104,6 +113,22 @@
           <div>tathawadeindustries@gmail.com
           </div>
         </div>
+        <div class="socialMedias">
+          <div>
+            <img class="socialMediaLogo" src="../assets/icons8-facebook.svg">
+          </div>
+          <div>
+            <img class="socialMediaLogo" src="../assets/icons8-blogger.svg">
+          </div>
+        </div>
+        <div class="socialMedias">
+          <div>
+            <img class="socialMediaLogo" src="../assets/icons8-instagram.svg">
+          </div>
+          <div>
+            <img class="socialMediaLogo" src="../assets/icons8-youtube.svg">
+          </div>
+        </div>
       </div>
       <span class="example-spacer"></span>
     </div>
@@ -111,7 +136,19 @@
       <div class="line"></div>
       <h2 class="center-heading">TATHAWADE INDUSTRIES</h2>
       <div class="line"></div>
+    </div>
+    <div class="padding5per alignItemsCenter">Copyright © 2024 Tathawade Industries | Developed by Harshal Chopade</div>
   </div>
-  <div>Copyright © 2024 Tathawade Industries | Developed by Harshal Chopade</div>
-  <router-outlet></router-outlet>
+</div>
+<div *ngIf="menu == true" [ngClass]="menu ? 'zIndex2':'zIndex1'" class="menuContainer">
+  <div class="width100per alignItemsRight">
+    <button (click)="toggleMenu()" class="menu" mat-icon-button aria-label="Example icon button with a menu icon">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <button class="navButtonsMenu" type="button" mat-flat-button>Home</button>
+  <button class="navButtonsMenu" type="button" mat-flat-button>About Us</button>
+  <button class="navButtonsMenu" type="button" mat-flat-button>Products</button>
+  <button class="navButtonsMenu" type="button" mat-flat-button>Gallery</button>
+  <button class="navButtonsMenu" type="button" mat-flat-button>Contact Us</button>
 </div>

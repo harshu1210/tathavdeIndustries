@@ -53,6 +53,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  visibility: visible;
+  align-items: center;
 }
 
 .navBack{
@@ -70,12 +72,15 @@
   width: auto;
   height: 100%;
   transition: scale 0.3s ease;
+  display: block;
+  visibility: visible;
 }
 
 .navButtons:hover{
   /* font-size: 3vh; */
   transform: scale(1.3);
   color: black;
+  font-weight: bold;
 }
 
 .requestQuote{
@@ -89,7 +94,7 @@
   flex-direction: column;
 }
 
-.flexDirectionRow{
+.flexFooter{
   display: flex;
   width: 100%;
   height: max-content;
@@ -140,8 +145,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  width: 100%;
+  padding:2vh;
+  padding-left:2vh;
+  padding-right:2vh;
+  width:calc(100% - 4vh);
 }
 
 .line {
@@ -154,4 +161,152 @@
   margin: 0 10px; /* Space between the heading and lines */
   white-space: nowrap;
   color: white; /* White color for the heading */
+  font-family: 'Spy';
+  font-size: 3vh;
+  font-style: italic;
+}
+
+.intermediateSpace{
+  display: block;
+  visibility: visible;
+}
+
+.intermediate{
+  display: none;
+  visibility: hidden;
+}
+
+.menu{
+  display: none;
+  visibility: hidden;
+}
+
+.menuContainer{
+  display: none;
+  visibility: hidden;
+}
+
+.zIndex2{
+  position: relative;
+  z-index: 2;
+}
+
+.zIndex1{
+  position: relative;
+  z-index: 1;
+}
+
+.socialMedias{
+  display: flex;
+  flex-direction: row;
+  gap: 2vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialMediaLogo{
+  height: 5vh;
+  width: 5vh;
+  border-radius: 25%;
+}
+
+.contact{
+  display: flex;
+  flex-direction: row;
+  gap: 2vh;
+}
+
+@media screen and (orientation:portrait) and (max-width:750px) and (min-width:300px){
+  .mail,.phone{
+    display: none;
+    visibility: hidden;
+  }
+
+  .flexFooter{
+    flex-direction: column;
+  }
+
+  .aboutUsDiv,.quickLinks,.products,.contactUs{
+    width: 90%;
+    padding-left: 5%;
+    padding-right:5%;
+  }
+
+  .navButtons{
+    display: none;
+    visibility: hidden;
+  }
+
+  .intermediateSpace{
+    display: none;
+    visibility: hidden;
+  }
+
+  .intermediate{
+    display: block;
+    visibility: visible;
+  }
+
+  .menu{
+    display: block;
+    visibility: visible;
+  }
+
+  .menuContainer{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    visibility: visible;
+    background-color: #E42129;
+    color: white;
+  }
+
+  .navButtonsMenu{
+    background-color: transparent;
+    color: white;
+  }
+
+  .padding5per{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .alignItemsRight{
+    display: flex;
+    justify-content: right;
+  }
+
+  .alignItemsCenter{
+    text-align: center;
+  }
+  .center-heading{
+    font-size: 2.5vh;
+  }
+  .titleFont{
+    font-size: 2.5vh;
+  }
+}
+
+@media screen and (orientation:portrait) and (min-width:751px){
+  .contact{
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .titleFont{
+    font-size: 3vh;
+  }
+
+  .footerTitle{
+    font-size: 2vh;
+  }
+
+
+}
+
+.router{
+  padding: 2vh;
 }

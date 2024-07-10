@@ -1,0 +1,79 @@
+<div class="contactUs">
+  <div class="contactUsHeader">
+    <div class="contactUsOverlay">
+      Contact Us
+    </div>
+  </div>
+  <div class="connect">
+    <div class="email">
+      <div class="logo">
+        <img class="logoImg" src="../../../assets/icons8-gmail.svg">
+      </div>
+      <div class="header">
+        Email Us
+      </div>
+      <div class="content">
+        tathawadeindustries@gmail.com
+      </div>
+    </div>
+    <div class="visitUs">
+      <div class="logo">
+        <img class="logoImg" src="../../../assets/icons8-google-maps.svg">
+      </div>
+      <div class="header">
+        Visit Us
+      </div>
+      <div class="content">
+        Sr. No. 64 / 1, A / P Tathawade, Aundh-Ravet BRT Road, Opp. Balaji Law College, PCMC, Pune - 411033,
+        Maharashtra, India.
+      </div>
+    </div>
+    <div class="callUs">
+      <div class="logo">
+        <img class="logoImg" src="../../../assets/icons8-phone-100 copy.png">
+      </div>
+      <div class="header">
+        Call Us
+      </div>
+      <div class="content">
+        +91 96234 45536 | +91 77579 89898
+      </div>
+    </div>
+  </div>
+  <div class="formsLocation">
+    <div class="form-container">
+      <div>
+        Connect Us
+      </div>
+      <div>
+
+      </div>
+    </div>
+    <div class="map-container">
+      <div>
+        Reach Us
+      </div>
+      <div id="map">
+        <google-map class="goooglMap" height="100%"
+        width="100%"
+        [center]="center"
+        [zoom]="zoom">
+        <map-marker
+          [position]="center"
+          [options]="markerOptions"
+          (mapClick)="openInfoWindow()">
+        </map-marker>
+        <map-info-window #infoWindow>
+          <div>
+            <h3>Tathawade Industries</h3>
+            <p>Aundh - Ravet BRTS Rd, opp. Balaji Law college, Ram Nagar, Tathawade, Pimpri-Chinchwad, Maharashtra 411033</p>
+            <p><strong>Rating: </strong>4.8 ★★★★★ (25 reviews)</p>
+            <a href="https://www.google.com/maps/place/Tathawade+Industries" target="_blank">View larger map</a>
+          </div>
+        </map-info-window>
+        </google-map>
+      </div>
+
+    </div>
+  </div>
+</div>

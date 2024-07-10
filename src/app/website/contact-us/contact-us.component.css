@@ -1,0 +1,111 @@
+.contactUs{
+  position: relative;
+  height: max-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.contactUsHeader{
+  position: relative;
+  height: 20vh;
+  width: 100%;
+  background-image: url(../../../assets/contactus-heard.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 300%;
+  background-position: center;
+}
+
+.contactUsOverlay{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 5vh;
+  font-weight: bold;
+}
+
+.connect{
+  padding: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  gap: 3vh;
+}
+
+.email,.visitUs,.callUs{
+  width: 25%;
+  height: max-content;
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  border: 0.25vh solid #E42129;
+  border-radius: 2vh;
+  gap: 2vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo{
+  height: 10vh;
+  width: 10vh;
+}
+
+.logoImg{
+  position: relative;
+  height: 10vh;
+  width: 10vh;
+}
+
+.header{
+  font-size: 4vh;
+  color: #E42129;
+  font-weight: bold;
+}
+
+.content{
+  font-size: 2vh;
+}
+
+.formsLocation{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  text-align: center;
+  width: 100%;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+.map-container,.form-container{
+  width: 45%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2vh;
+}
+
+#map{
+  height: 40vh;
+  width: 100%;
+}
+
+.goooglMap{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}

@@ -28,6 +28,9 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { InputSnackbarComponent } from './Shared/snackbar/inputsnackbar.component';
 import {YesNoSnackBarComponent} from './Shared/snackbar/yesNoSnackbar.component';
+import { HomeComponent } from './website/home/home.component';
+import { ContactUsComponent } from './website/contact-us/contact-us.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import {YesNoSnackBarComponent} from './Shared/snackbar/yesNoSnackbar.component'
     LoginComponent,
     ProductListComponent,
     InputSnackbarComponent,
-    YesNoSnackBarComponent
+    YesNoSnackBarComponent,
+    HomeComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,8 @@ import {YesNoSnackBarComponent} from './Shared/snackbar/yesNoSnackbar.component'
     provideAuth(() => getAuth()),
     MatButtonModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

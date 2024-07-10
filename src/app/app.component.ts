@@ -10,9 +10,14 @@ export class AppComponent implements OnInit {
 
   }
 
+  menu:boolean=false
   ngOnInit(): void {
     this.snackbarService.openYesNoSnackbar('Are you a working professional at Tathawade Industries?', () => {
 
     });
+  }
+
+  toggleMenu(){
+    this.menu= !this.menu;
   }
 }
